@@ -27,8 +27,8 @@ void Entity::ai_activate(Entity *player) {
             ai_jump(player);
             break;
             
-        case ATTACK:
-            ai_attack(player);
+        case FLEE:
+            ai_flee(player);
             break;
             
         default:
@@ -80,7 +80,7 @@ void Entity::ai_jump(Entity *player) {
             
         case JUMPING:
             if (m_velocity.y == 0) {
-                m_velocity.y = 5.0f;
+                m_velocity.y = 3.0f;
                 m_ai_state = WALKING;
             }
             break;
@@ -93,38 +93,38 @@ void Entity::ai_jump(Entity *player) {
     }
 }
 
-void Entity::ai_attack(Entity *player) {
+void Entity::ai_flee(Entity *player) {
     switch (m_ai_state) {
         case IDLE:
             if (glm::distance(m_position, player->get_position()) < 2.0f) {
-                m_ai_state = ATTACKING;
+                m_ai_state = FLEEING;
             }
             break;
             
         case WALKING:
             if (glm::distance(m_position, player->get_position()) < 2.0f) {
-                m_ai_state = ATTACKING;
-            } else {
-                m_ai_state = WALKING;
+                m_ai_state = FLEEING;
             }
             break;
                 
-        case ATTACKING:
-            if (glm::distance(m_position, player->get_position()) < 2.0f) {
-                shoot_mud();
+        case FLEEING:
+            if (glm::distance(m_position, player->get_position()) >= 2.0f) {
                 m_ai_state = IDLE;
             } else {
-                m_ai_state = WALKING;
+                glm::vec3 direction = m_position - player->get_position();
+                direction = glm::normalize(direction);
+                m_movement = direction;
+                if (direction.x > 0) {
+                    m_animation_indices = m_walking[1];
+                } else {
+                    m_animation_indices = m_walking[0];
+                }
             }
             break;
                 
         default:
             break;
     }
-}
-
-void Entity::shoot_mud() {
-    
 }
 
 // Default constructor
@@ -212,6 +212,8 @@ void Entity::draw_sprite_from_texture_atlas(ShaderProgram* program, GLuint textu
 }
 
 bool const Entity::check_collision(Entity* other) const {
+    if (other->m_is_active == false) return false;
+    
     float x_distance = fabs(m_position.x - other->m_position.x) - ((m_width + other->m_width) / 2.0f);
     float y_distance = fabs(m_position.y - other->m_position.y) - ((m_height + other->m_height) / 2.0f);
 
@@ -233,6 +235,11 @@ void const Entity::check_collision_y(Entity *collidable_entities, int collidable
                 m_position.y += y_overlap;
                 m_velocity.y = 0;
                 m_collided_bottom = true;       // Collision!
+                
+                if (collidable_entity->m_entity_type == ENEMY) {
+                    collidable_entity->m_is_active = false;
+                    m_enemy_counter += 1;
+                }
             }
         }
     }
@@ -374,6 +381,8 @@ void Entity::update(float delta_time, Entity *player, Entity *collidable_entitie
 
 
 void Entity::render(ShaderProgram* program) {
+    if (!m_is_active) return;
+    
     program->set_model_matrix(m_model_matrix);
 
     if (m_animation_indices != NULL) {

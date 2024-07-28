@@ -40,6 +40,7 @@ protected:
 public:
     // ————— ATTRIBUTES ————— //
     int m_number_of_enemies = 3;
+    bool m_game_over = false;
     
     // ————— METHODS ————— //
     virtual void initialise() = 0;

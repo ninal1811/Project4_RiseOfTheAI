@@ -5,9 +5,8 @@
 #include "glm/glm.hpp"
 #include "ShaderProgram.h"
 enum EntityType { PLATFORM, PLAYER, ENEMY };
-enum AIType { WALKER, GUARD, ATTACK, JUMP };
-enum AIState { WALKING, IDLE, ATTACKING, JUMPING };
-
+enum AIType { WALKER, GUARD, FLEE, JUMP };
+enum AIState { WALKING, IDLE, ATTACKING, FLEEING, JUMPING };
 
 enum AnimationDirection { LEFT, RIGHT, UP, DOWN };
 
@@ -51,13 +50,14 @@ private:
     bool m_collided_bottom = false;
     bool m_collided_left = false;
     bool m_collided_right = false;
-
+    
 public:
     // ————— STATIC VARIABLES ————— //
     static constexpr int SECONDS_PER_FRAME = 4;
+    float m_enemy_counter = 0.0f;
     
     GLuint m_texture_id;
-
+    
     // ————— METHODS ————— //
     Entity();
     Entity(GLuint texture_id, float speed, glm::vec3 acceleration, float jump_power, int walking[4][4], float animation_time,
@@ -84,8 +84,7 @@ public:
     void ai_walk();
     void ai_guard(Entity *player);
     void ai_jump(Entity *player);
-    void ai_attack(Entity *player);
-    void shoot_mud();
+    void ai_flee(Entity *player);
     
     void normalise_movement() { m_movement = glm::normalize(m_movement); }
 
@@ -138,8 +137,8 @@ public:
     void const set_animation_index(int new_index) { m_animation_index = new_index; }
     void const set_animation_time(float new_time) { m_animation_time = new_time; }
     void const set_jumping_power(float new_jumping_power) { m_jumping_power = new_jumping_power;}
-    void const set_width(float new_width) {m_width = new_width; }
-    void const set_height(float new_height) {m_height = new_height; }
+    void const set_width(float new_width) { m_width = new_width; }
+    void const set_height(float new_height) { m_height = new_height; }
 
     // Setter for m_walking
     void set_walking(int walking[4][4]) {

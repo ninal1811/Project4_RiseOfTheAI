@@ -36,7 +36,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "YES"
-      customWorkingDirectory = "/Users/army/Desktop/NYU/classes/summer2024/csuy3113/RiseOfTheAI/RiseOfTheAI"
+      customWorkingDirectory = "/Users/army/Desktop/NYU/classes/summer2024/csuy3113/Project4_RiseOfTheAI/RiseOfTheAI/RiseOfTheAI"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"

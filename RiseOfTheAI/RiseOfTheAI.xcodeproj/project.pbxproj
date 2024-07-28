@@ -8,14 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1E5EA4B92C4C504500829EF2 /* assets in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1E5EA4B82C4C503B00829EF2 /* assets */; };
-		1E5EA4BB2C4DACFC00829EF2 /* shaders in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1EF212002C4B395A00F4BC51 /* shaders */; };
 		1E5EA4C62C4E079E00829EF2 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E5EA4BC2C4E079D00829EF2 /* Scene.cpp */; };
 		1E5EA4C82C4E079E00829EF2 /* Utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E5EA4C32C4E079D00829EF2 /* Utility.cpp */; };
 		1E5EA4C92C4E079E00829EF2 /* LevelA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E5EA4C42C4E079E00829EF2 /* LevelA.cpp */; };
 		1E5EA4CE2C4E0CCA00829EF2 /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E5EA4CD2C4E0CCA00829EF2 /* Map.cpp */; };
 		1E5EA4D12C4E0D9A00829EF2 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E5EA4D02C4E0D9A00829EF2 /* Entity.cpp */; };
-		1E9CF64B2C51ED170085DCC2 /* Lose.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E9CF6492C51ED170085DCC2 /* Lose.cpp */; };
-		1E9CF64E2C51ED310085DCC2 /* Win.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E9CF64C2C51ED310085DCC2 /* Win.cpp */; };
+		1EEB1FE12C54B80400B6DE27 /* shaders in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1EF212002C4B395A00F4BC51 /* shaders */; };
 		1EF211F42C4B34CF00F4BC51 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1EF211F32C4B34CF00F4BC51 /* main.cpp */; };
 		1EF212012C4B395A00F4BC51 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1EF211FA2C4B395800F4BC51 /* ShaderProgram.cpp */; };
 		1EF212052C4B39A100F4BC51 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF212042C4B39A100F4BC51 /* OpenGL.framework */; };
@@ -33,7 +31,7 @@
 			dstSubfolderSpec = 6;
 			files = (
 				1E5EA4B92C4C504500829EF2 /* assets in CopyFiles */,
-				1E5EA4BB2C4DACFC00829EF2 /* shaders in CopyFiles */,
+				1EEB1FE12C54B80400B6DE27 /* shaders in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -47,15 +45,11 @@
 		1E5EA4C22C4E079D00829EF2 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
 		1E5EA4C32C4E079D00829EF2 /* Utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utility.cpp; sourceTree = "<group>"; };
 		1E5EA4C42C4E079E00829EF2 /* LevelA.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LevelA.cpp; sourceTree = "<group>"; };
-		1E5EA4CC2C4E0C4F00829EF2 /* glm */ = {isa = PBXFileReference; lastKnownFileType = folder; name = glm; path = ../../include/glm; sourceTree = "<group>"; };
 		1E5EA4CD2C4E0CCA00829EF2 /* Map.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
 		1E5EA4CF2C4E0D0A00829EF2 /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
 		1E5EA4D02C4E0D9A00829EF2 /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
 		1E5EA4D22C4E0DB900829EF2 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
-		1E9CF6492C51ED170085DCC2 /* Lose.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Lose.cpp; sourceTree = "<group>"; };
-		1E9CF64A2C51ED170085DCC2 /* Lose.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Lose.h; sourceTree = "<group>"; };
-		1E9CF64C2C51ED310085DCC2 /* Win.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Win.cpp; sourceTree = "<group>"; };
-		1E9CF64D2C51ED310085DCC2 /* Win.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Win.h; sourceTree = "<group>"; };
+		1E9CF64F2C533EFF0085DCC2 /* glm */ = {isa = PBXFileReference; lastKnownFileType = folder; name = glm; path = ../../../include/glm; sourceTree = "<group>"; };
 		1EF211F02C4B34CF00F4BC51 /* RiseOfTheAI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RiseOfTheAI; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EF211F32C4B34CF00F4BC51 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		1EF211FA2C4B395800F4BC51 /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgram.cpp; sourceTree = "<group>"; };
@@ -105,11 +99,11 @@
 		1EF211F22C4B34CF00F4BC51 /* RiseOfTheAI */ = {
 			isa = PBXGroup;
 			children = (
+				1E9CF64F2C533EFF0085DCC2 /* glm */,
 				1E5EA4D22C4E0DB900829EF2 /* Entity.h */,
 				1E5EA4D02C4E0D9A00829EF2 /* Entity.cpp */,
 				1E5EA4CF2C4E0D0A00829EF2 /* Map.h */,
 				1E5EA4CD2C4E0CCA00829EF2 /* Map.cpp */,
-				1E5EA4CC2C4E0C4F00829EF2 /* glm */,
 				1E5EA4C42C4E079E00829EF2 /* LevelA.cpp */,
 				1E5EA4C02C4E079D00829EF2 /* LevelA.h */,
 				1E5EA4BC2C4E079D00829EF2 /* Scene.cpp */,
@@ -122,10 +116,6 @@
 				1EF212002C4B395A00F4BC51 /* shaders */,
 				1EF211FE2C4B395900F4BC51 /* stb_image.h */,
 				1EF211F32C4B34CF00F4BC51 /* main.cpp */,
-				1E9CF6492C51ED170085DCC2 /* Lose.cpp */,
-				1E9CF64A2C51ED170085DCC2 /* Lose.h */,
-				1E9CF64C2C51ED310085DCC2 /* Win.cpp */,
-				1E9CF64D2C51ED310085DCC2 /* Win.h */,
 			);
 			path = RiseOfTheAI;
 			sourceTree = "<group>";
@@ -202,9 +192,7 @@
 				1E5EA4C62C4E079E00829EF2 /* Scene.cpp in Sources */,
 				1EF211F42C4B34CF00F4BC51 /* main.cpp in Sources */,
 				1E5EA4D12C4E0D9A00829EF2 /* Entity.cpp in Sources */,
-				1E9CF64E2C51ED310085DCC2 /* Win.cpp in Sources */,
 				1E5EA4C82C4E079E00829EF2 /* Utility.cpp in Sources */,
-				1E9CF64B2C51ED170085DCC2 /* Lose.cpp in Sources */,
 				1E5EA4C92C4E079E00829EF2 /* LevelA.cpp in Sources */,
 				1E5EA4CE2C4E0CCA00829EF2 /* Map.cpp in Sources */,
 				1EF212012C4B395A00F4BC51 /* ShaderProgram.cpp in Sources */,
